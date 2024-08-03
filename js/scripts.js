@@ -136,45 +136,8 @@ $(document).ready(function () {
 
     });
 
-    // /********************** Social Share buttons ***********************/
-    // var share_bar = document.getElementsByClassName('share-bar');
-    // var po = document.createElement('script');
-    // po.type = 'text/javascript';
-    // po.async = true;
-    // po.src = 'https://apis.google.com/js/platform.js';
-    // var s = document.getElementsByTagName('script')[0];
-    // s.parentNode.insertBefore(po, s);
-
-    // for (var i = 0; i < share_bar.length; i++) {
-    //     var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-    //         'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=Shreya&Saurabh&amp;hashtags=Shreya&Saurabh&amp;count=horizontal"' +
-    //         'style="width:105px; height:21px;">' +
-    //         '</iframe>' +
-
-    //         '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
-
-    //         '<div class="g-plusone" data-size="medium"></div>';
-
-    //     // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
-
-    //     share_bar[i].innerHTML = html;
-    //     share_bar[i].style.display = 'inline-block';
-    // }
-
     /********************** Social Share buttons ***********************/
-document.addEventListener('DOMContentLoaded', function() {
     var share_bar = document.getElementsByClassName('share-bar');
-    
-    // Load Facebook SDK
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0&appId=101094500229731&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-    // Load Google Plus Platform script
     var po = document.createElement('script');
     po.type = 'text/javascript';
     po.async = true;
@@ -184,29 +147,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     for (var i = 0; i < share_bar.length; i++) {
         var html = '<iframe allowtransparency="true" frameborder="0" scrolling="no"' +
-            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location.href) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=Shreya&Saurabh&amp;hashtags=Shreya&Saurabh&amp;count=horizontal"' +
+            'src="https://platform.twitter.com/widgets/tweet_button.html?url=' + encodeURIComponent(window.location) + '&amp;text=' + encodeURIComponent(document.title) + '&amp;via=Shreya&Saurabh&amp;hashtags=Shreya&Saurabh&amp;count=horizontal"' +
             'style="width:105px; height:21px;">' +
             '</iframe>' +
 
-            '<div class="fb-like" data-href="' + encodeURIComponent(window.location.href) + '" data-width="150" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>' +
+            '<iframe src="//www.facebook.com/plugins/like.php?href=' + encodeURIComponent(window.location) + '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=101094500229731&amp;width=150" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>' +
 
             '<div class="g-plusone" data-size="medium"></div>';
+
+        // '<iframe src="https://plusone.google.com/_/+1/fastbutton?bsv&amp;size=medium&amp;url=' + encodeURIComponent(window.location) + '" allowtransparency="true" frameborder="0" scrolling="no" title="+1" style="width:105px; height:21px;"></iframe>';
 
         share_bar[i].innerHTML = html;
         share_bar[i].style.display = 'inline-block';
     }
-
-    // Render Facebook buttons after SDK is loaded
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: '101094500229731',
-            autoLogAppEvents: true,
-            xfbml: true,
-            version: 'v3.0'
-        });
-        FB.XFBML.parse();
-    };
-});
 
     /********************** Embed youtube video *********************/
     $('.player').YTPlayer();
