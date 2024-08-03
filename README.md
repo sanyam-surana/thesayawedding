@@ -1,6 +1,6 @@
 # Wedding Website
 A beautiful, feature rich, device friendly wedding website.  
-_See for a demo. Use invite code `XXXXXX` to RSVP.
+Use invite code `XXXXXX` to RSVP.
 
 # Highlights
 1. Slick and fully __responsive__ design.
