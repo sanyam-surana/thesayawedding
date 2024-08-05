@@ -441,18 +441,42 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
-                                                                  max="10"
-                                                                  placeholder="No of Pax"
-                                                                  required>
+                                <i class="fa fa-phone"></i>
+                                <input type="tel" name="phone" placeholder="Your phone number" required>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
+                                <i class="fa fa-calendar"></i>
+                                <input type="date" name="date_of_arrival" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-clock"></i>
+                                <input type="time" name="time_of_arrival" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-bus"></i>
+                                <input type="name" name="mode_of_travel" placeholder="Mode of Travel (Flight/Train/Bus)" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-info-circle"></i>
+                                <input type="text" name="details_of_transport" placeholder="Flight No/Train No/Bus No" optional>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-users"></i>
+                                <input type="number" name="no_of_pax" min="1" max="10" placeholder="No of Pax" required>
                             </div>
                         </div>
                     </div>

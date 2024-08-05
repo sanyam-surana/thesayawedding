@@ -207,36 +207,34 @@ $(document).ready(function () {
     $('#add-to-cal').html(myCalendar);
 
 
-    /********************** RSVP **********************/
-    $('#rsvp-form').on('submit', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
+/********************** RSVP **********************/
+$('#rsvp-form').on('submit', function (e) {
+    e.preventDefault();
+    var data = $(this).serialize();
 
-        $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+    // Log data to ensure it's correct
+    console.log("Serialized Data: ", data);
 
-        if (MD5($('#invite_code').val()) !== 'eebd4fc6dfb71931206c9b0212ea7eff'
-            && MD5($('#invite_code').val()) !== '68d13cf26c4b4f4f932e3eff990093ba') {
-            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-        } else {
-            $.post('https://script.google.com/macros/s/AKfycbwT50Ks_xBXxLnnW3FhDYYvqvWsTa731mev0l_4niQeeRiqTriUXElYdqUamPUIM6NEdw/exec', data)
-                .done(function (data) {
-                    console.log(data);
-                    if (data.result === "error") {
-                        $('#alert-wrapper').html(alert_markup('danger', data.message));
-                    } else {
-                        $('#alert-wrapper').html('');
-                        $('#rsvp-modal').modal('show');
-                    }
-                })
-                .fail(function (data) {
-                    console.log(data);
-                    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
-                });
-        }
-    });
+    $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
+    // Send the form data to the API directly
+    $.post('https://script.google.com/macros/s/AKfycbwT50Ks_xBXxLnnW3FhDYYvqvWsTa731mev0l_4niQeeRiqTriUXElYdqUamPUIM6NEdw/exec', data)
+        .done(function (response) {
+            console.log("API Response: ", response);
+            if (response.result === "error") {
+                $('#alert-wrapper').html(alert_markup('danger', response.message));
+            } else {
+                $('#alert-wrapper').html('');
+                $('#rsvp-modal').modal('show');
+            }
+        })
+        .fail(function (xhr, status, error) {
+            console.log("API Call Failed: ", xhr, status, error);
+            $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server.'));
+        });
 });
 
+});
 /********************** Extras **********************/
 
 // Google map
