@@ -194,7 +194,7 @@ $(document).ready(function () {
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Dec 08, 2024 09:00'),
+            end: new Date('Dec 08, 2024 10:00'),
 
             // Event Address
             address: 'The Grand Shekhawati Hotel, Churu, Rajasthan',
