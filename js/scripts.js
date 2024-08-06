@@ -187,7 +187,7 @@ $(document).ready(function () {
             title: "Shreya and Saurabh's Wedding",
 
             // Event start date
-            start: new Date('Dec 06, 2024 10:00'),
+            start: new Date('Dec 06, 2024 13:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
