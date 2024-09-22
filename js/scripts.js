@@ -218,7 +218,7 @@ $('#rsvp-form').on('submit', function (e) {
     $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
     // Send the form data to the API directly
-    $.post('https://script.google.com/macros/s/AKfycbwT50Ks_xBXxLnnW3FhDYYvqvWsTa731mev0l_4niQeeRiqTriUXElYdqUamPUIM6NEdw/exec', data)
+    $.post('https://script.google.com/macros/s/AKfycbxoW3a3_zegVsq-Ixl6oHljcF3n83xv0kjXWCTk3BwQUYRnd2qAz3hzDuqjYFGl4ROa8A/exec', data)
         .done(function (response) {
             console.log("API Response: ", response);
             if (response.result === "error") {
